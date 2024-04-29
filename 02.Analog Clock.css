@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/* :root{
+    --theme-color:red;
+} */
+body{
+    background-color: #2f3640;
+    height: 100vh;
+    width: 100wh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.analog-clock{
+   width: 500px;
+   height: 500px;
+   background-color: #fff;
+   border: 5px ridge red;
+   border-radius: 50%;
+   position: relative;
+}
+.analog-clock::before{
+    content: 'Analog Clock';
+    color: red;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.analog-clock::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+
+.number{
+    --rotate:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: red;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    transform: rotate(var(--rotate));
+}
+.number-1{
+    --rotate:30deg;
+}
+.number-2{
+    --rotate:60deg;;
+}
+.number-3{
+    --rotate:90deg;;
+}
+.number-4{
+    --rotate:120deg;;
+}
+.number-5{
+    --rotate:150deg;;
+}
+.number-6{
+    --rotate:180deg;;
+}
+.number-7{
+    --rotate:210deg;;
+}
+.number-8{
+    --rotate:240deg;;
+}
+.number-9{
+    --rotate:270deg;;
+}
+.number-10{
+    --rotate:300deg;;
+}
+.number-11{
+    --rotate:330deg;;
+}
+
+
+.needle{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 40%;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    transform-origin: bottom;
+    background-color: red; 
+    z-index: 8;
+    border-top-left-radius:50% ;
+    border-top-right-radius:50% ;
+}
+
+.hrs{
+    background-color: black;
+    width: 10px;
+    height: 25%;
+    /* --rotation:75; */
+}
+.min{
+    background-color: black;
+    width:7px;
+    height: 40%;
+    /* --rotation:60; */
+}
+.sec{
+    background-color: red;
+    width: 3px;
+    height: 45%;
+    /* --rotation:30; */
+}
